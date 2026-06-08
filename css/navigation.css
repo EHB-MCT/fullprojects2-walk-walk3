@@ -5,6 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
   }
 
   #backArrow > img {
@@ -25,8 +26,8 @@
     display: flex;
     align-items: center;
     background-color: #ffe375;
-    border-radius: 10px;
-    height: 25px;
+    border-radius: 8px;
+    height: 3.5vh;
     padding: 0x;
     cursor: pointer;
     position: relative;
@@ -42,7 +43,7 @@
     width: 50%;
     height: 100%;
     background-color: #e8501a;
-    border-radius: 10px;
+    border-radius: 8px;
     left: 0;
     transition: left 0.5s ease;
   }

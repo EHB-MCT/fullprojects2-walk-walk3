@@ -1,5 +1,6 @@
 @import url("navigation.css");
-
+@import url("mainparts.css");
+@import url("footer.css");
 * {
   margin: 0;
   padding: 0;
@@ -50,6 +51,9 @@ font-style: italic;
     color: white;
     text-align: center;
   }
+  header {
+    width: 100%;
+  }
   #HomeExtraTitel {
     font-size: 65px;
     line-height: 50px;
@@ -58,20 +62,53 @@ font-style: italic;
     text-align: left;
   }
   .breakLine {
-    display: inline-block;
     width: 34%;
     height: 3px;
     border-radius: 1px;
     background-color: #ffe375;
-    margin-left: 33%;
-    margin-right: 33%;
-
-    margin-top: 10%;
   }
   b {
     color: #ffe375;
   }
   body {
     background-color: #2b254c;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+  }
+  /*INPUTS*/
+  input[type="text"],
+  input[type="text"]:focus {
+    box-sizing: border-box;
+    background-color: #ffffff;
+    color: #2b254c;
+
+    border: none;
+    outline: none !important;
+    box-shadow: none !important;
+    padding: 1% 2%;
+    font-family: "segoe-ui", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+  }
+  input[type="text"]::placeholder {
+    color: #2b254c;
+    opacity: 1;
+  }
+  button {
+    font-family: "segoe-ui", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 18px;
+    color: white;
+    background-color: #ec5c37;
+    border: none;
+    padding: 1% 4%;
+  }
+  button:active {
+    color: #ec5c37;
+    background-color: white;
   }
 }

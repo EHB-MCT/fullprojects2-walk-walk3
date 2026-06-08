@@ -25,10 +25,25 @@
     <header>
       <h1 id="HomeExtraTitel">Genoeg <br />van de <br /><b>troep</b></h1>
     </header>
-    <section>
+    <section class="locatieObject">
       <span class="breakLine"></span>
       <h1>Waar is het obstakel<b>?</b></h1>
+      <input type="text" placeholder="Straat" id="inputStraat" />
+      <input type="text" placeholder="Gemeente" id="inputGemeente" />
+      <input type="text" placeholder="Postcode" id="inputPostcode" />
+      <iframe
+        id="kaart"
+        src="https://maps.google.com/maps?q=Brussel&output=embed"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+      <section id="locationButtons">
+        <button id="deelLocatieButton">Deel locatie</button>
+      </section>
     </section>
+    <footer>
+      <button id="page1Volgende">Volgende</button>
+    </footer>
     <script src="javascript/Javascript.js"></script>
   </body>
 </html>
