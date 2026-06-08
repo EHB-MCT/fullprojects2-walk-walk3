@@ -1,4 +1,9 @@
-@import url("####");
+@import url("navigation.css");
+
+* {
+  margin: 0;
+  padding: 0;
+}
 
 /*--------FONTS--------*/
 /*
@@ -35,3 +40,38 @@ font-weight: 900;
 font-style: italic;
 
 */
+
+@media (max-width: 48em) {
+  h1 {
+    font-family: "segoe-ui", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 29px;
+    color: white;
+    text-align: center;
+  }
+  #HomeExtraTitel {
+    font-size: 65px;
+    line-height: 50px;
+    margin-left: 5%;
+    margin-top: 10%;
+    text-align: left;
+  }
+  .breakLine {
+    display: inline-block;
+    width: 34%;
+    height: 3px;
+    border-radius: 1px;
+    background-color: #ffe375;
+    margin-left: 33%;
+    margin-right: 33%;
+
+    margin-top: 10%;
+  }
+  b {
+    color: #ffe375;
+  }
+  body {
+    background-color: #2b254c;
+  }
+}
