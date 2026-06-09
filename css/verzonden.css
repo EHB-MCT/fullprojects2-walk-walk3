@@ -1,0 +1,48 @@
+@media (max-width: 48em) {
+  #verzondenSection {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  #verzondenTitel {
+    margin: 0;
+    text-align: center;
+    line-height: 40px;
+  }
+}
+
+/* ook op grotere schermen verticaal centreren */
+#verzondenSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#keerTerug {
+  margin-top: 20px;
+}
+
+#keerTerug {
+  text-decoration: none;
+  float: right;
+}
+#keerTerug {
+  font-family: "segoe-ui", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 18px;
+  color: white;
+  background-color: #ec5c37;
+  border: none;
+  padding: 1% 4%;
+}
+#keerTerug:active {
+  color: #ec5c37;
+  background-color: white;
+}
