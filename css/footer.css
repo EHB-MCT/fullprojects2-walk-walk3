@@ -4,5 +4,20 @@ footer {
   margin-bottom: 8%;
 }
 #page1Volgende {
+  text-decoration: none;
   float: right;
+}
+#page1Volgende {
+  font-family: "segoe-ui", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 18px;
+  color: white;
+  background-color: #ec5c37;
+  border: none;
+  padding: 1% 4%;
+}
+#page1Volgende:active {
+  color: #ec5c37;
+  background-color: white;
 }
