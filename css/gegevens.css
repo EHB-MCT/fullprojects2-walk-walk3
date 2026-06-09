@@ -1,86 +1,74 @@
 @media (max-width: 48em) {
-
-.locatieGegevens{
+  .locatieGegevens {
     display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10%;
-}
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+  }
 
-#inputNaam{
-width: 75%;
-margin-top: 5%;
-}
-#inputVoornaam{
-width: 75%;
-margin-top: 5%;
-}
-#inputMail{
-width: 75%;
-margin-top: 5%;
-}
+  #inputNaam,
+  #inputVoornaam,
+  #inputMail {
+    width: 75%;
+    margin-top: 5%;
+  }
 
-body {
+  body {
     background: #221b4f;
     font-family: Arial, sans-serif;
     color: white;
-}
+  }
 
-.checkbox-group {
+  .checkbox-group {
     max-width: 700px;
     padding: 20px;
-}
+  }
 
-.custom-checkbox {
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 5%;
+  .custom-checkbox {
     display: flex;
     align-items: flex-start;
     gap: 12px;
-    margin-bottom: 24px;
+    margin: 5% 10% 24px;
     cursor: pointer;
-}
+  }
 
-.custom-checkbox input {
+  .custom-checkbox input {
     display: none;
-}
+  }
 
-.checkmark {
+  .checkmark {
     width: 18px;
     height: 18px;
-    border: 2px solid #ffffff;
+    border: 2px solid white;
     box-sizing: border-box;
     margin-top: 3px;
     flex-shrink: 0;
-}
+  }
 
-.custom-checkbox input:checked + .checkmark {
-    background: #ffe375;;
+  .custom-checkbox input:checked + .checkmark {
+    background: #ffe375;
     border-color: #ffe375;
-}
+  }
 
-.checkbox-text span {
-    display: block;
+  .custom-checkbox p {
     font-size: 12px;
     font-weight: 500;
     line-height: 1.4;
-}
+    margin: 0;
+  }
 
-.checkbox-text p {
+  .custom-checkbox small {
+    display: block;
     margin-top: 3%;
-    margin-left: 3%;
-    margin-right: 4%;
     font-size: 10px;
     color: #ffd34d;
     line-height: 1.4;
-}
+  }
 
-.checkbox-text a {
+  .custom-checkbox a {
     color: #ffd34d;
     text-decoration: underline;
-}
-
+  }
 }
