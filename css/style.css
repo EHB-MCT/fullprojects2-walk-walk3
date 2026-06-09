@@ -1,6 +1,7 @@
 @import url("navigation.css");
 @import url("mainparts.css");
 @import url("footer.css");
+@import url("gegevens.css");
 * {
   margin: 0;
   padding: 0;
