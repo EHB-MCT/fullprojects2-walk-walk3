@@ -3,24 +3,28 @@
     margin-top: 2vh;
     margin-bottom: 2vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 86%;
+    position: relative; /* nodig voor absolute logo */
+    padding: 0 7%;
   }
 
-  #backArrow > img {
-    width: 100%;
-  }
-  #Logo > img {
-    width: 100%;
-  }
   #backArrow {
     width: 10%;
   }
+  #backArrow > img {
+    width: 100%;
+  }
+
   #Logo {
-    width: 25%;
-    margin-left: 17%;
-    margin-right: 17%;
+    width: 30%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  #Logo > img {
+    width: 100%;
   }
   .taalKnop {
     display: flex;
@@ -31,7 +35,7 @@
     padding: 0x;
     cursor: pointer;
     position: relative;
-    width: 15%;
+    width: 18%;
   }
 
   .taalKnop input {

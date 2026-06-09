@@ -59,7 +59,7 @@ font-style: italic;
     font-size: 65px;
     line-height: 50px;
     margin-left: 5%;
-    margin-top: 10%;
+    margin-top: 5%;
     text-align: left;
   }
   .breakLine {
@@ -111,5 +111,10 @@ font-style: italic;
   button:active {
     color: #ec5c37;
     background-color: white;
+  }
+  .PageNav {
+    width: 40%;
+    margin-left: 30%;
+    margin-top: 5%;
   }
 }
