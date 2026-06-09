@@ -3,11 +3,11 @@ footer {
   width: 75%;
   margin-bottom: 8%;
 }
-#page1Volgende {
+#Volgende {
   text-decoration: none;
   float: right;
 }
-#page1Volgende {
+#Volgende {
   font-family: "segoe-ui", sans-serif;
   font-weight: 700;
   font-style: normal;
@@ -17,7 +17,25 @@ footer {
   border: none;
   padding: 1% 4%;
 }
-#page1Volgende:active {
+#Volgende:active {
+  color: #ec5c37;
+  background-color: white;
+}
+#Vorige {
+  text-decoration: none;
+  float: left;
+}
+#Vorige {
+  font-family: "segoe-ui", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 18px;
+  color: white;
+  background-color: #ec5c37;
+  border: none;
+  padding: 1% 4%;
+}
+#Vorige:active {
   color: #ec5c37;
   background-color: white;
 }
