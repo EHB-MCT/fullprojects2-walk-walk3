@@ -1,0 +1,35 @@
+@media (max-width: 48em) {
+  h1 {
+    font-family: "segoe-ui", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 32px;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+  }
+
+  h2 {
+    font-family: "segoe-ui", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 18px;
+    color: #ec5c37;
+    text-align: center;
+  }
+
+  header {
+    width: 100%;
+  }
+
+  #HomeExtraTitel {
+    font-size: 65px;
+    line-height: 50px;
+    margin-left: 5%;
+    margin-top: 5%;
+    text-align: left;
+  }
+}

@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 48em) {
+  body {
+    background-color: #2b254c;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+  }
+  b {
+    color: #ffe375;
+  }
+}

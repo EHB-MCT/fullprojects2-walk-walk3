@@ -6,7 +6,7 @@
     justify-content: space-between;
     align-items: center;
     width: 86%;
-    position: relative; /* nodig voor absolute logo */
+    position: relative;
     padding: 0 7%;
   }
 
@@ -26,6 +26,7 @@
   #Logo > img {
     width: 100%;
   }
+
   .taalKnop {
     display: flex;
     align-items: center;

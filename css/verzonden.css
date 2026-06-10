@@ -16,7 +16,6 @@
   }
 }
 
-/* ook op grotere schermen verticaal centreren */
 #verzondenSection {
   display: flex;
   justify-content: center;

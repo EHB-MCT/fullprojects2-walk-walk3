@@ -10,8 +10,6 @@
   position: relative;
 }
 
-/* decoratieve streepjes */
-
 .fotoLabel {
   cursor: pointer;
 }
@@ -63,6 +61,7 @@
   flex-wrap: wrap;
   width: 75%;
   margin-bottom: 10%;
+  justify-content: space-evenly;
 }
 
 .obstakel input {
@@ -79,6 +78,7 @@
 .obstakel input:checked ~ img {
   border-color: #e8501a;
 }
+
 .obstakel span {
   display: flex;
   align-items: center;
