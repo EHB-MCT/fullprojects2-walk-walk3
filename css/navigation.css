@@ -75,3 +75,91 @@
     color: white;
   }
 }
+
+@media (min-width: 48em) {
+  nav {
+    margin-top: 4vh;
+    margin-bottom: 2vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 74%;
+    position: relative;
+    padding: 0;
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+
+  #backArrow {
+    width: 4%;
+  }
+  #backArrow > img {
+    width: 100%;
+  }
+
+  #Logo {
+    width: 15%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  #Logo > img {
+    width: 100%;
+  }
+
+  .taalKnop {
+    display: flex;
+    align-items: center;
+    background-color: #ffe375;
+    border-radius: 8px;
+    height: 3.5vh;
+    padding: 0x;
+    cursor: pointer;
+    position: relative;
+    width: 7%;
+  }
+
+  .taalKnop input {
+    display: none;
+  }
+
+  .slider {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: #e8501a;
+    border-radius: 8px;
+    left: 0;
+    transition: left 0.5s ease;
+  }
+
+  .taalKnop input:checked ~ .slider {
+    left: 50%;
+  }
+
+  .taal-nl,
+  .taal-fr {
+    position: relative;
+    z-index: 1;
+    width: 50%;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #2b254c;
+    font-family: "EestiRegular", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+
+  .taal-nl.wit,
+  .taal-fr.wit {
+    color: white;
+  }
+
+  .PageNav {
+    width: 14%;
+    margin-top: 2%;
+    margin-left: 43%;
+    margin-right: 43%;
+  }
+}

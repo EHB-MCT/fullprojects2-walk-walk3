@@ -34,3 +34,42 @@
     margin-bottom: 3%;
   }
 }
+@media (min-width: 48em) {
+  h1 {
+    font-family: "EestiUltraBold", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 28px;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    width: 80%;
+    margin-bottom: 5%;
+  }
+
+  h2 {
+    font-family: "EestiRegular", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 18px;
+    color: #ec5c37;
+    text-align: center;
+  }
+
+  header {
+    width: 100%;
+  }
+
+  #HomeExtraTitel {
+    margin: auto;
+    font-size: 90px;
+    line-height: 75px;
+    text-align: left;
+    width: 100%;
+  }
+  #headerIndex {
+    width: 25%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+}
