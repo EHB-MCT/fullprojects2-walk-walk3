@@ -2,7 +2,14 @@
   margin: 0;
   padding: 0;
 }
-
+@font-face {
+  font-family: "EestiUltraBold";
+  src: url("../fonts/GT-Eesti-Display-Ultra-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "EestiRegular";
+  src: url("../fonts/GT-Eesti-Display-Regular.ttf") format("truetype");
+}
 @media (max-width: 48em) {
   body {
     background-color: #2b254c;
@@ -34,5 +41,8 @@
   #decoVerzonden {
     width: 80%;
     top: 20%;
+  }
+  header > h1 {
+    margin-left: 5%;
   }
 }

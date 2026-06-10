@@ -8,14 +8,14 @@ footer {
   float: right;
 }
 .Volgende {
-  font-family: "segoe-ui", sans-serif;
+  font-family: "EestiRegular", sans-serif;
   font-weight: 700;
   font-style: normal;
   font-size: 18px;
   color: white;
   background-color: #ec5c37;
   border: none;
-  padding: 1% 4%;
+  padding: 4% 4%;
 }
 .Volgende:active {
   color: #ec5c37;
@@ -26,14 +26,14 @@ footer {
   float: left;
 }
 .Vorige {
-  font-family: "segoe-ui", sans-serif;
+  font-family: "EestiRegular", sans-serif;
   font-weight: 700;
   font-style: normal;
   font-size: 18px;
   color: white;
   background-color: #ec5c37;
   border: none;
-  padding: 1% 4%;
+  padding: 4% 4%;
 }
 .Vorige:active {
   color: #ec5c37;

@@ -39,7 +39,7 @@
   margin: 1rem auto 0;
   text-align: center;
   color: #ec5c37;
-  font-family: "segoe-ui", sans-serif;
+  font-family: "EestiRegular", sans-serif;
   font-weight: 700;
   text-decoration: none;
 }
@@ -64,10 +64,10 @@
   margin-top: 5%;
 }
 #deelLocatieButton {
-  font-family: "segoe-ui", sans-serif;
+  font-family: "EestiRegular", sans-serif;
   font-weight: 600;
   font-style: normal;
-  padding: 0% 3%;
+  padding: 3% 3%;
   font-size: 16px;
   background-color: #ffe375;
   color: #2b254c;

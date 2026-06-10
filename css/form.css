@@ -16,8 +16,8 @@
     border: none;
     outline: none;
     box-shadow: none;
-    padding: 1% 2%;
-    font-family: "segoe-ui", sans-serif;
+    padding: 2% 2%;
+    font-family: "EestiRegular", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 14px;
@@ -30,7 +30,7 @@
   }
 
   button {
-    font-family: "segoe-ui", sans-serif;
+    font-family: "EestiRegular", sans-serif;
     font-weight: 700;
     font-style: normal;
     font-size: 18px;
