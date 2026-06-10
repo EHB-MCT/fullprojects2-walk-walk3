@@ -3,11 +3,11 @@ footer {
   width: 75%;
   margin-bottom: 8%;
 }
-#Volgende {
+.Volgende {
   text-decoration: none;
   float: right;
 }
-#Volgende {
+.Volgende {
   font-family: "segoe-ui", sans-serif;
   font-weight: 700;
   font-style: normal;
@@ -17,15 +17,15 @@ footer {
   border: none;
   padding: 1% 4%;
 }
-#Volgende:active {
+.Volgende:active {
   color: #ec5c37;
   background-color: white;
 }
-#Vorige {
+.Vorige {
   text-decoration: none;
   float: left;
 }
-#Vorige {
+.Vorige {
   font-family: "segoe-ui", sans-serif;
   font-weight: 700;
   font-style: normal;
@@ -35,7 +35,16 @@ footer {
   border: none;
   padding: 1% 4%;
 }
-#Vorige:active {
+.Vorige:active {
   color: #ec5c37;
   background-color: white;
+}
+
+#Indienen {
+  background-color: #ffe375;
+  color: #2b254c;
+}
+#Indienen:active {
+  background-color: #2b254c;
+  color: #ffe375;
 }

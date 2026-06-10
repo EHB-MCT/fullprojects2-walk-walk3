@@ -40,3 +40,20 @@ function updateMap() {
 inputs.forEach(function (input) {
   input.addEventListener("input", updateMap);
 });
+
+const inputFoto = document.getElementById("inputFoto");
+const fotoPreview = document.getElementById("fotoPreview");
+const fotoLabelText = document.getElementById("fotoLabelText");
+
+inputFoto.addEventListener("change", function () {
+  const file = this.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      fotoPreview.src = e.target.result;
+      fotoPreview.style.display = "block";
+      fotoLabelText.style.display = "none";
+    };
+    reader.readAsDataURL(file);
+  }
+});

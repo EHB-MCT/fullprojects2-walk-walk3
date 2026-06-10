@@ -27,9 +27,91 @@
       alt="page navigation"
       class="PageNav"
     />
+
+    <header>
+      <h1 id="obstakelTitel">Upload een foto van het obstakel<b>!</b></h1>
+    </header>
+
+    <section class="fotoUpload">
+      <label for="inputFoto" class="fotoLabel">
+        <div class="fotoKader">
+          <img id="fotoPreview" src="" alt="preview" />
+          <span id="fotoLabelText">Foto<br />Uploaden</span>
+        </div>
+        <input type="file" id="inputFoto" accept="image/*" />
+      </label>
+    </section>
+    <span class="breakLine" id="breaklineObstakel"></span>
+
+    <section class="obstakels">
+      <label class="obstakel">
+        <input type="checkbox" name="obstakel" value="bollard" />
+        <img src="../images/bollard.svg" alt="bollard" />
+      </label>
+      <label class="obstakel">
+        <input type="checkbox" name="obstakel" value="signage" />
+        <img src="../images/signageinformationpanel.svg" alt="signage" />
+      </label>
+      <label class="obstakel">
+        <input type="checkbox" name="obstakel" value="technicalcabinet" />
+        <img src="../images/technicalcabinet.svg" alt="technicalcabinet" />
+      </label>
+      <label class="obstakel">
+        <input type="checkbox" name="obstakel" value="terrace" />
+        <img src="../images/terrace.svg" alt="terrace" />
+      </label>
+      <label class="obstakel">
+        <input type="checkbox" name="obstakel" value="auto" />
+        <img src="../images/auto.svg" alt="auto" />
+      </label>
+      <label class="obstakel">
+        <input type="checkbox" name="obstakel" value="moto" />
+        <img src="../images/moto.svg" alt="moto" />
+      </label>
+      <label class="obstakel">
+        <input type="checkbox" name="obstakel" value="bikescooter" />
+        <img src="../images/bikescooter.svg" alt="bikescooter" />
+      </label>
+      <label class="obstakel">
+        <input type="checkbox" name="obstakel" value="advertisingpanel" />
+        <img src="../images/advertisingpanel.svg" alt="advertisingpanel" />
+      </label>
+      <label class="obstakel">
+        <input type="checkbox" name="obstakel" value="barrier" />
+        <img src="../images/barrier.svg" alt="barrier" />
+      </label>
+      <label class="obstakel">
+        <input type="checkbox" name="obstakel" value="misplacedtrashbin" />
+        <img src="../images/misplacedtrashbin.svg" alt="misplacedtrashbin" />
+      </label>
+      <label class="obstakel">
+        <input type="checkbox" name="obstakel" value="trashbag" />
+        <img src="../images/trashbag.svg" alt="trashbag" />
+      </label>
+      <label class="obstakel">
+        <input type="checkbox" name="obstakel" value="chargingstation" />
+        <img
+          src="../images/chargingstationorcableforelectricvehicle.svg"
+          alt="chargingstation"
+        />
+      </label>
+      <label class="obstakel">
+        <input type="checkbox" name="obstakel" value="streetlight" />
+        <img src="../images/streetlight.svg" alt="streetlight" />
+      </label>
+      <label class="obstakel">
+        <input type="checkbox" name="obstakel" value="misplaceddropzone" />
+        <img src="../images/misplaceddropzone.svg" alt="misplaceddropzone" />
+      </label>
+      <label class="obstakel">
+        <input type="checkbox" name="obstakel" value="andere" />
+        <span>Andere</span>
+      </label>
+    </section>
+
     <footer>
-      <a id="Vorige" href="../index.html">Vorige</a>
-      <a id="Volgende" href="gegevens.html">Volgende</a>
+      <a class="Vorige" href="../index.html">Vorige</a>
+      <a class="Volgende" href="gegevens.html">Volgende</a>
     </footer>
     <script src="../javascript/Javascript.js"></script>
   </body>

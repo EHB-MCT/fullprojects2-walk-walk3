@@ -3,6 +3,7 @@
 @import url("footer.css");
 @import url("verzonden.css");
 @import url("gegevens.css");
+@import url("obstakel.css");
 * {
   margin: 0;
   padding: 0;
@@ -52,6 +53,10 @@ font-style: italic;
     font-size: 32px;
     color: white;
     text-align: center;
+    line-height: 40px;
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 5%;
   }
 
   h2 {
