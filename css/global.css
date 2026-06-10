@@ -10,8 +10,29 @@
     flex-direction: column;
     min-height: 100vh;
     align-items: center;
+    position: relative;
+    overflow-x: hidden;
   }
   b {
     color: #ffe375;
+  }
+  .deco {
+    position: absolute;
+    bottom: 50;
+    left: 30%;
+    transform: translateX(-50%) translateY(-50%);
+    top: 73%;
+    width: 70%;
+    pointer-events: none;
+    z-index: -1;
+  }
+  #decoGegevens {
+    width: 80%;
+    left: 35%;
+    top: 75%;
+  }
+  #decoVerzonden {
+    width: 80%;
+    top: 20%;
   }
 }
