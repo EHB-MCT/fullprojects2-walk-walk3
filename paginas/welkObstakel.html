@@ -7,11 +7,9 @@
     <link rel="stylesheet" href="../css/style.css" />
     <title>Walk Brussels</title>
   </head>
-  <body>
+  <body class="bodyObstakel">
     <nav>
-      <a href="https://www.walk.brussels/nl/genoeg-van-de-troep" id="backArrow"
-        ><img src="../images/Arrow.png" alt="arrow"
-      /></a>
+      <span id="backArrow"></span>
       <a href="../index.html" id="Logo"
         ><img src="../images/logo.avif" alt="arrow"
       /></a>
@@ -21,12 +19,12 @@
         <span class="taal-nl">nl</span>
         <span class="taal-fr">fr</span>
       </label>
+      <img
+        src="../images/StappenNav2.png"
+        alt="page navigation"
+        class="PageNav"
+      />
     </nav>
-    <img
-      src="../images/StappenNav2.png"
-      alt="page navigation"
-      class="PageNav"
-    />
 
     <header>
       <h1 id="obstakelTitel">Upload een foto van het obstakel<b>!</b></h1>
@@ -34,15 +32,15 @@
 
     <section class="fotoUpload">
       <label for="inputFoto" class="fotoLabel">
-        <div class="fotoKader">
+        <section class="fotoKader">
           <img id="fotoPreview" src="" alt="preview" />
           <span id="fotoLabelText">Foto<br />Uploaden</span>
-        </div>
+        </section>
         <input type="file" id="inputFoto" accept="image/*" />
       </label>
     </section>
     <span class="breakLine" id="breaklineObstakel"></span>
-
+    <h1 id="obstakelTitel">Welk obstakel is het<b>?</b></h1>
     <section class="obstakels">
       <label class="obstakel">
         <input type="checkbox" name="obstakel" value="bollard" />
