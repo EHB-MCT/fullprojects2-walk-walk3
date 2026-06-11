@@ -85,9 +85,11 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+    align-items: center;
   }
 
   .checkboxText {
+    align-items: center;
     font-size: 15px;
     font-family: "EestiRegular", sans-serif;
     color: white;
