@@ -58,6 +58,7 @@
     justify-content: center;
     position: relative;
     overflow-x: hidden;
+    overflow-y: hidden;
   }
   b {
     color: #ffe375;
@@ -65,10 +66,10 @@
   .deco {
     position: absolute;
     bottom: 50;
-    left: 30%;
+    left: 15%;
     transform: translateX(-50%) translateY(-50%);
-    top: 73%;
-    width: 70%;
+    top: 60%;
+    width: 40%;
     pointer-events: none;
     z-index: -1;
   }

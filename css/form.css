@@ -50,3 +50,56 @@
     margin-top: 5%;
   }
 }
+
+@media (min-width: 48em) {
+  .breakLine {
+    width: 34%;
+    height: 3px;
+    border-radius: 1px;
+    background-color: #ffe375;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="text"]:focus,
+  input[type="email"]:focus {
+    box-sizing: border-box;
+    background-color: #ffffff;
+    color: #2b254c;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding: 2% 2%;
+    font-family: "EestiRegular", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+  }
+
+  input[type="text"]::placeholder,
+  input[type="email"]::placeholder {
+    color: #2b254c;
+    opacity: 1;
+  }
+
+  button {
+    font-family: "EestiRegular", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 18px;
+    color: white;
+    background-color: #ec5c37;
+    border: none;
+    padding: 1% 4%;
+  }
+
+  button:active {
+    color: #ec5c37;
+    background-color: white;
+  }
+
+  .PageNav {
+    width: 40%;
+    margin-top: 5%;
+  }
+}

@@ -23,11 +23,12 @@
         <span class="taal-fr">fr</span>
       </label>
     </nav>
+
     <img src="images/StappenNav1.png" alt="page navigation" class="PageNav" />
     <header id="headerIndex">
       <h1 id="HomeExtraTitel">Genoeg <br />van de <br /><b>troep</b></h1>
     </header>
-    <section class="locatieObject">
+    <section class="locatieObject objectMobile">
       <span class="breakLine"></span>
       <h1>Waar is het obstakel<b>?</b></h1>
       <input type="text" placeholder="Straat" id="inputStraat" />
@@ -43,6 +44,28 @@
         <button id="deelLocatieButton">Deel je locatie</button>
       </section>
     </section>
+
+    <section class="locatieObject objectDesktop">
+      <section>
+        <span class="breakLine"></span>
+      </section>
+      <section>
+        <h1>Waar is het obstakel<b>?</b></h1>
+        <input type="text" placeholder="Straat" id="inputStraat" />
+        <input type="text" placeholder="Gemeente" id="inputGemeente" />
+        <input type="text" placeholder="Postcode" id="inputPostcode" />
+        <iframe
+          id="kaart"
+          src="https://maps.google.com/maps?q=Brussel&output=embed"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+        <section id="locationButtons">
+          <button id="deelLocatieButton">Deel je locatie</button>
+        </section>
+      </section>
+    </section>
+
     <footer>
       <a class="Volgende" href="paginas/welkObstakel.html">Volgende</a>
     </footer>
