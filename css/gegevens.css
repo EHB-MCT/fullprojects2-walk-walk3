@@ -87,6 +87,12 @@
     gap: 30px;
   }
 
+  .checkboxText {
+    font-size: 15px;
+    font-family: "EestiRegular", sans-serif;
+    color: white;
+  }
+
   .checkbox-group {
     margin-top: 5%;
     margin-bottom: 5%;
