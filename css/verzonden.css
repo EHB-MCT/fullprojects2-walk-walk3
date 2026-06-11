@@ -17,6 +17,27 @@
   #keerTerug {
     padding: 4% 4%;
   }
+  #keerTerug {
+    margin-top: 20px;
+  }
+
+  #keerTerug {
+    text-decoration: none;
+    float: right;
+  }
+  #keerTerug {
+    font-family: "EestiRegular", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 18px;
+    color: white;
+    background-color: #ec5c37;
+    border: none;
+  }
+  #keerTerug:active {
+    color: #ec5c37;
+    background-color: white;
+  }
 }
 
 @media (min-width: 48em) {
@@ -36,6 +57,7 @@
     flex-direction: column;
     flex-wrap: wrap;
     margin-top: 8vh;
+    margin-bottom: 14vh;
   }
 
   .titel {
