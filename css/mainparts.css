@@ -75,6 +75,12 @@
     color: #ffe375;
     background-color: #2b254c;
   }
+  .objectDesktop {
+    display: none;
+  }
+  .objectMobile {
+    display: flex;
+  }
 }
 
 @media (min-width: 48em) {
@@ -86,12 +92,73 @@
     align-items: center;
     width: 50%;
   }
+
+  .locatieObject > section:nth-child(1) {
+    width: 5%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .locatieObject > section:nth-child(2) {
+    width: 95%;
+    height: 100%;
+  }
+
+  .locatieObject > section:nth-child(2) > h1 {
+    width: 95%;
+    text-align: left;
+    padding-left: 5%;
+  }
+
   .breakLine {
-    margin-top: 20%;
-    margin-bottom: 20%;
+    display: inline-block;
     margin-bottom: 0;
-    height: 20vh;
+    height: 25vh;
     width: 3px;
     background-color: #ffe375;
+  }
+  .objectMobile {
+    display: none;
+  }
+  .objectDesktop {
+    display: flex;
+  }
+
+  #inputStraat {
+    width: 70%;
+    margin-left: 5%;
+    margin-right: 25%;
+  }
+  #inputGemeente {
+    width: 40%;
+    margin-top: 3%;
+    margin-left: 5%;
+  }
+  #inputPostcode {
+    margin-top: 3%;
+    width: 25%;
+    margin-left: 5%;
+  }
+  #kaart {
+    width: 70%;
+    max-width: 950px;
+    height: 150px;
+    margin: auto;
+    border: none;
+    margin-top: 5%;
+    margin-left: 5%;
+    touch-action: pan-x pan-y;
+  }
+  #deelLocatieButton {
+    font-family: "EestiRegular", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    padding: 2% 3%;
+    font-size: 16px;
+    background-color: #ffe375;
+    color: #2b254c;
+    margin-left: 5%;
+    margin-top: 5%;
   }
 }

@@ -14,58 +14,55 @@
     text-align: center;
     line-height: 40px;
   }
+  #keerTerug {
+    padding: 4% 4%;
+  }
 }
 
 @media (min-width: 48em) {
+  .deco {
+    display: none;
+  }
 
-.deco {
-  display: none;
-}
+  #bodyVerzenden {
+    height: 100vh;
+  }
 
-nav {
-  margin-top: 0.2vh;
-}
+  #verzondenSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 8vh;
+  }
 
-#bodyVerzenden{
-  min-height: 80vh;
-}
+  .titel {
+    font-size: 50px;
+    line-height: 60px;
+  }
 
-#verzondenSection {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  flex-direction: column;
-  flex-wrap: wrap;
-  margin-top: 15vh;
-}
+  #keerTerug {
+    margin-top: 20px;
+  }
 
-.titel {
-  font-size: 50px;
-  line-height: 60px;
-}
-
-#keerTerug {
-  margin-top: 20px;
-}
-
-#keerTerug {
-  text-decoration: none;
-  float: right;
-}
-#keerTerug {
-  font-family: "EestiRegular", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 18px;
-  color: white;
-  background-color: #ec5c37;
-  border: none;
-  padding: 4% 4%;
-}
-#keerTerug:active {
-  color: #ec5c37;
-  background-color: white;
-}
-
+  #keerTerug {
+    text-decoration: none;
+    float: right;
+  }
+  #keerTerug {
+    font-family: "EestiRegular", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 18px;
+    color: white;
+    background-color: #ec5c37;
+    border: none;
+    padding: 2% 3%;
+  }
+  #keerTerug:active {
+    color: #ec5c37;
+    background-color: white;
+  }
 }
