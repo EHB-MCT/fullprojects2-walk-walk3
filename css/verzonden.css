@@ -16,11 +16,33 @@
   }
 }
 
+@media (min-width: 48em) {
+
+.deco {
+  display: none;
+}
+
+nav {
+  margin-top: 0.2vh;
+}
+
+#bodyVerzenden{
+  min-height: 80vh;
+}
+
 #verzondenSection {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 15vh;
+}
+
+.titel {
+  font-size: 50px;
+  line-height: 60px;
 }
 
 #keerTerug {
@@ -44,4 +66,6 @@
 #keerTerug:active {
   color: #ec5c37;
   background-color: white;
+}
+
 }
