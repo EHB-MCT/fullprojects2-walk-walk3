@@ -5,6 +5,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     width: 86%;
     position: relative;
     padding: 0 7%;
@@ -13,38 +14,39 @@
   #backArrow {
     width: 10%;
   }
+
   #backArrow > img {
     width: 100%;
   }
 
-  #Logo {
+  #logo {
     top: 0;
     width: 30%;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
   }
-  #Logo > img {
+
+  #logo > img {
     width: 100%;
   }
 
-  .taalKnop {
+  .language-toggle {
     display: flex;
     align-items: center;
     background-color: #ffe375;
     border-radius: 8px;
-    height: 3.5vh;
-    padding: 0x;
+    height: 28px;
     cursor: pointer;
     position: relative;
     width: 18%;
   }
 
-  .taalKnop input {
+  .language-toggle input {
     display: none;
   }
 
-  .slider {
+  .language-slider {
     position: absolute;
     width: 50%;
     height: 100%;
@@ -54,12 +56,12 @@
     transition: left 0.5s ease;
   }
 
-  .taalKnop input:checked ~ .slider {
+  .language-toggle input:checked ~ .language-slider {
     left: 50%;
   }
 
-  .taal-nl,
-  .taal-fr {
+  .language-nl,
+  .language-fr {
     position: relative;
     z-index: 1;
     width: 50%;
@@ -71,14 +73,12 @@
     font-style: normal;
   }
 
-  .taal-nl.wit,
-  .taal-fr.wit {
+  .language-nl.active,
+  .language-fr.active {
     color: white;
   }
-  nav {
-    flex-wrap: wrap;
-  }
-  .PageNav {
+
+  .step-nav {
     width: 50%;
     margin-left: 25%;
     margin-right: 25%;
@@ -104,38 +104,39 @@
   #backArrow {
     width: 4%;
   }
+
   #backArrow > img {
     width: 100%;
   }
 
-  #Logo {
+  #logo {
     top: 0;
     width: 15%;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
   }
-  #Logo > img {
+
+  #logo > img {
     width: 100%;
   }
 
-  .taalKnop {
+  .language-toggle {
     display: flex;
     align-items: center;
     background-color: #ffe375;
     border-radius: 8px;
-    height: 3.5vh;
-    padding: 0x;
+    height: 28px;
     cursor: pointer;
     position: relative;
     width: 7%;
   }
 
-  .taalKnop input {
+  .language-toggle input {
     display: none;
   }
 
-  .slider {
+  .language-slider {
     position: absolute;
     width: 50%;
     height: 100%;
@@ -145,12 +146,12 @@
     transition: left 0.5s ease;
   }
 
-  .taalKnop input:checked ~ .slider {
+  .language-toggle input:checked ~ .language-slider {
     left: 50%;
   }
 
-  .taal-nl,
-  .taal-fr {
+  .language-nl,
+  .language-fr {
     position: relative;
     z-index: 1;
     width: 50%;
@@ -162,12 +163,12 @@
     font-style: normal;
   }
 
-  .taal-nl.wit,
-  .taal-fr.wit {
+  .language-nl.active,
+  .language-fr.active {
     color: white;
   }
 
-  .PageNav {
+  .step-nav {
     width: 14vw;
     margin-top: 5%;
     margin-left: 40.5%;

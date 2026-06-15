@@ -1,63 +1,68 @@
 <!doctype html>
-<html lang="en">
+<html lang="nl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Meld obstakels op het voetpad in Brussel via het Walk Brussels rapportageformulier."
+    />
+    <link rel="icon" type="image/png" href="images/Favicon.png" />
     <link rel="stylesheet" href="https://use.typekit.net/gpf2sus.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Walk Brussels</title>
+    <title>Obstakel Melden | Walk Brussels</title>
   </head>
   <body>
     <img src="images/Deco1.png" alt="" class="deco" />
     <nav>
       <a href="https://www.walk.brussels/nl/genoeg-van-de-troep" id="backArrow"
-        ><img src="images/Arrow.png" alt="arrow"
+        ><img src="images/Arrow.png" alt="Terug naar Walk Brussels"
       /></a>
-      <a href="index.html" id="Logo"
-        ><img src="images/logo.avif" alt="arrow"
+      <a href="index.html" id="logo"
+        ><img src="images/logo.avif" alt="Walk Brussels logo"
       /></a>
-      <label class="taalKnop">
-        <input type="checkbox" id="taalToggle" />
-        <span class="slider"></span>
-        <span class="taal-nl">nl</span>
-        <span class="taal-fr">fr</span>
+      <label class="language-toggle">
+        <input type="checkbox" id="languageToggle" />
+        <span class="language-slider"></span>
+        <span class="language-nl">nl</span>
+        <span class="language-fr">fr</span>
       </label>
-      <img src="images/StappenNav1.png" alt="page navigation" class="PageNav" />
+      <img src="images/StappenNav1.png" alt="Stap 1 van 3" class="step-nav" />
     </nav>
 
-    <header id="headerIndex">
-      <h1 id="HomeExtraTitel">Genoeg <br />van de <br /><b>troep</b></h1>
+    <header id="home-header">
+      <h1 id="home-title">Genoeg <br />van de <br /><b>troep</b></h1>
     </header>
-    <section class="locatieObject objectMobile">
-      <span class="breakLine"></span>
+    <section class="location-form mobile-only">
+      <span class="divider"></span>
       <h1>Waar is het obstakel<b>?</b></h1>
       <input type="text" placeholder="Straat" id="inputStraat" />
       <input type="text" placeholder="Gemeente" id="inputGemeente" />
       <input type="text" placeholder="Postcode" id="inputPostcode" />
-      <section class="locationButtons">
-        <button class="deelLocatieButton">Deel je locatie</button>
+      <section class="location-buttons">
+        <button class="share-location-button">Deel je locatie</button>
       </section>
       <iframe
-        id="kaartMobile"
+        id="map-mobile"
         src="https://maps.google.com/maps?q=Brussel&output=embed"
         allowfullscreen
         loading="lazy"
       ></iframe>
     </section>
-    <section class="locatieObject objectDesktop">
+    <section class="location-form desktop-only">
       <section>
-        <span class="breakLine"></span>
+        <span class="divider"></span>
       </section>
       <section>
         <h1>Waar is het obstakel<b>?</b></h1>
         <input type="text" placeholder="Straat" id="inputStraatDesktop" />
         <input type="text" placeholder="Gemeente" id="inputGemeenteDesktop" />
         <input type="text" placeholder="Postcode" id="inputPostcodeDesktop" />
-        <section class="locationButtons">
-          <button class="deelLocatieButton">Deel je locatie</button>
+        <section class="location-buttons">
+          <button class="share-location-button">Deel je locatie</button>
         </section>
         <iframe
-          id="kaartDesktop"
+          id="map-desktop"
           src="https://maps.google.com/maps?q=Brussel&output=embed"
           allowfullscreen
           loading="lazy"
@@ -65,7 +70,7 @@
       </section>
     </section>
     <footer>
-      <a class="Volgende" href="paginas/welkObstakel.html">Volgende</a>
+      <a class="btn-next" href="paginas/welkObstakel.html">Volgende</a>
     </footer>
     <script src="javascript/Javascript.js"></script>
   </body>

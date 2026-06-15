@@ -1,5 +1,5 @@
 @media (max-width: 48em) {
-  #verzondenSection {
+  #sent-section {
     flex: 1;
     width: 100%;
     display: flex;
@@ -9,23 +9,16 @@
     text-align: center;
   }
 
-  #verzondenTitel {
+  #sent-title {
     margin: 0;
     text-align: center;
     line-height: 40px;
   }
-  #keerTerug {
-    padding: 4% 4%;
-  }
-  #keerTerug {
-    margin-top: 20px;
-  }
 
-  #keerTerug {
+  #back-button {
+    padding: 4% 4%;
+    margin-top: 20px;
     text-decoration: none;
-    float: right;
-  }
-  #keerTerug {
     font-family: "EestiRegular", sans-serif;
     font-weight: 700;
     font-style: normal;
@@ -34,7 +27,8 @@
     background-color: #ec5c37;
     border: none;
   }
-  #keerTerug:active {
+
+  #back-button:active {
     color: #ec5c37;
     background-color: white;
   }
@@ -45,11 +39,11 @@
     display: none;
   }
 
-  #bodyVerzenden {
+  #body-sent {
     height: 100vh;
   }
 
-  #verzondenSection {
+  #sent-section {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,20 +54,14 @@
     margin-bottom: 14vh;
   }
 
-  .titel {
+  .page-title {
     font-size: 50px;
     line-height: 60px;
   }
 
-  #keerTerug {
+  #back-button {
     margin-top: 20px;
-  }
-
-  #keerTerug {
     text-decoration: none;
-    float: right;
-  }
-  #keerTerug {
     font-family: "EestiRegular", sans-serif;
     font-weight: 700;
     font-style: normal;
@@ -81,9 +69,10 @@
     color: white;
     background-color: #ec5c37;
     border: none;
-    padding: 2% 3%;
+    padding: 4% 4%;
   }
-  #keerTerug:active {
+
+  #back-button:active {
     color: #ec5c37;
     background-color: white;
   }

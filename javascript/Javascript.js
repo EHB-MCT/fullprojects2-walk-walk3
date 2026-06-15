@@ -1,21 +1,21 @@
-var toggle = document.getElementById("taalToggle");
-var nl = document.querySelector(".taal-nl");
-var fr = document.querySelector(".taal-fr");
+var toggle = document.getElementById("languageToggle");
+var nl = document.querySelector(".language-nl");
+var fr = document.querySelector(".language-fr");
 
-nl.classList.add("wit");
+nl.classList.add("active");
 
 toggle.addEventListener("change", function () {
   if (toggle.checked) {
-    nl.classList.remove("wit");
-    fr.classList.add("wit");
+    nl.classList.remove("active");
+    fr.classList.add("active");
   } else {
-    nl.classList.add("wit");
-    fr.classList.remove("wit");
+    nl.classList.add("active");
+    fr.classList.remove("active");
   }
 });
 
-var kaartMobile = document.getElementById("kaartMobile");
-var kaartDesktop = document.getElementById("kaartDesktop");
+var mapMobile = document.getElementById("map-mobile");
+var mapDesktop = document.getElementById("map-desktop");
 
 function updateMap() {
   var straat = document.getElementById("inputStraat").value;
@@ -27,11 +27,11 @@ function updateMap() {
     encodeURIComponent(adres) +
     "&output=embed";
 
-  if (kaartMobile) kaartMobile.src = embedUrl;
-  if (kaartDesktop) kaartDesktop.src = embedUrl;
+  if (mapMobile) mapMobile.src = embedUrl;
+  if (mapDesktop) mapDesktop.src = embedUrl;
 }
 
-var inputs = document.querySelectorAll(".locatieObject input");
+var inputs = document.querySelectorAll(".location-form input");
 if (inputs.length > 0) {
   inputs.forEach(function (input) {
     input.addEventListener("input", updateMap);
@@ -40,27 +40,27 @@ if (inputs.length > 0) {
 
 var inputFoto = document.getElementById("inputFoto");
 if (inputFoto) {
-  var fotoPreview = document.getElementById("fotoPreview");
-  var fotoLabelText = document.getElementById("fotoLabelText");
+  var photoPreview = document.getElementById("photo-preview");
+  var photoLabelText = document.getElementById("photo-label-text");
   inputFoto.addEventListener("change", function () {
     var file = this.files[0];
     if (file) {
       var reader = new FileReader();
       reader.onload = function (e) {
-        fotoPreview.src = e.target.result;
-        fotoPreview.style.display = "block";
-        fotoLabelText.style.display = "none";
+        photoPreview.src = e.target.result;
+        photoPreview.style.display = "block";
+        photoLabelText.style.display = "none";
       };
       reader.readAsDataURL(file);
     }
   });
 }
 
-document.querySelectorAll(".deelLocatieButton").forEach(function (knop) {
-  knop.addEventListener("click", function () {
-    navigator.geolocation.getCurrentPosition(function (positie) {
-      var lat = positie.coords.latitude;
-      var lon = positie.coords.longitude;
+document.querySelectorAll(".share-location-button").forEach(function (button) {
+  button.addEventListener("click", function () {
+    navigator.geolocation.getCurrentPosition(function (position) {
+      var lat = position.coords.latitude;
+      var lon = position.coords.longitude;
       fetch(
         "https://nominatim.openstreetmap.org/reverse?lat=" +
           lat +
@@ -72,29 +72,32 @@ document.querySelectorAll(".deelLocatieButton").forEach(function (knop) {
           return response.json();
         })
         .then(function (data) {
-          var adres = data.address;
-          var straat = (adres.road || "") + " " + (adres.house_number || "");
-          var gemeente = adres.city || adres.town || adres.municipality || "";
-          var postcode = adres.postcode || "";
+          var address = data.address;
+          var street =
+            (address.road || "") + " " + (address.house_number || "");
+          var municipality =
+            address.city || address.town || address.municipality || "";
+          var postcode = address.postcode || "";
 
-          document.getElementById("inputStraat").value = straat;
-          document.getElementById("inputGemeente").value = gemeente;
+          document.getElementById("inputStraat").value = street;
+          document.getElementById("inputGemeente").value = municipality;
           document.getElementById("inputPostcode").value = postcode;
 
           if (document.getElementById("inputStraatDesktop")) {
-            document.getElementById("inputStraatDesktop").value = straat;
-            document.getElementById("inputGemeenteDesktop").value = gemeente;
+            document.getElementById("inputStraatDesktop").value = street;
+            document.getElementById("inputGemeenteDesktop").value =
+              municipality;
             document.getElementById("inputPostcodeDesktop").value = postcode;
           }
 
-          var volledigAdres =
-            straat + " " + postcode + " " + gemeente + " Brussel";
+          var fullAddress =
+            street + " " + postcode + " " + municipality + " Brussel";
           var embedUrl =
             "https://maps.google.com/maps?q=" +
-            encodeURIComponent(volledigAdres) +
+            encodeURIComponent(fullAddress) +
             "&output=embed";
-          if (kaartMobile) kaartMobile.src = embedUrl;
-          if (kaartDesktop) kaartDesktop.src = embedUrl;
+          if (mapMobile) mapMobile.src = embedUrl;
+          if (mapDesktop) mapDesktop.src = embedUrl;
         });
     });
   });

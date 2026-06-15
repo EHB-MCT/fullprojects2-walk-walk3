@@ -2,14 +2,17 @@
   margin: 0;
   padding: 0;
 }
+
 @font-face {
   font-family: "EestiUltraBold";
-  src: url("../fonts/GT-Eesti-Display-Ultra-Bold.ttf") format("truetype");
+  src: url("../font/GT-Eesti-Display-Ultra-Bold.ttf") format("truetype");
 }
+
 @font-face {
   font-family: "EestiRegular";
-  src: url("../fonts/GT-Eesti-Display-Regular.ttf") format("truetype");
+  src: url("../font/GT-Eesti-Display-Regular.ttf") format("truetype");
 }
+
 @media (max-width: 48em) {
   body {
     background-color: #2b254c;
@@ -20,12 +23,13 @@
     position: relative;
     overflow-x: hidden;
   }
+
   b {
     color: #ffe375;
   }
+
   .deco {
     position: absolute;
-    bottom: 50;
     left: 30%;
     transform: translateX(-50%) translateY(-50%);
     top: 73%;
@@ -33,15 +37,18 @@
     pointer-events: none;
     z-index: -1;
   }
+
   #decoGegevens {
     width: 80%;
     left: 35%;
     top: 75%;
   }
+
   #decoVerzonden {
     width: 80%;
     top: 20%;
   }
+
   header > h1 {
     margin-left: 10%;
   }
@@ -59,12 +66,13 @@
     position: relative;
     overflow-x: hidden;
   }
+
   b {
     color: #ffe375;
   }
+
   .deco {
     position: absolute;
-    bottom: 50;
     left: 15%;
     transform: translateX(-50%) translateY(-50%);
     top: 60%;
@@ -72,15 +80,18 @@
     pointer-events: none;
     z-index: -1;
   }
+
   #decoGegevens {
     width: 80%;
     left: 35%;
     top: 75%;
   }
+
   #decoVerzonden {
     width: 80%;
     top: 20%;
   }
+
   header > h1 {
     margin-left: 10%;
   }

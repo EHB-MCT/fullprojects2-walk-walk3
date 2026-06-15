@@ -1,115 +1,126 @@
 <!doctype html>
-<html lang="en">
+<html lang="nl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Upload een foto en duid het obstakel aan op het voetpad."
+    />
+    <link rel="icon" type="image/png" href="../images/Favicon.png" />
     <link rel="stylesheet" href="https://use.typekit.net/gpf2sus.css" />
     <link rel="stylesheet" href="../css/style.css" />
-    <title>Walk Brussels</title>
+    <title>Obstakel Aanduiden | Walk Brussels</title>
   </head>
-  <body class="bodyObstakel">
+  <body class="body-obstacle">
     <nav>
       <span id="backArrow"></span>
-      <a href="../index.html" id="Logo"
-        ><img src="../images/logo.avif" alt="arrow"
+      <a href="../index.html" id="logo"
+        ><img src="../images/logo.avif" alt="Walk Brussels logo"
       /></a>
-      <label class="taalKnop">
-        <input type="checkbox" id="taalToggle" />
-        <span class="slider"></span>
-        <span class="taal-nl">nl</span>
-        <span class="taal-fr">fr</span>
+      <label class="language-toggle">
+        <input type="checkbox" id="languageToggle" />
+        <span class="language-slider"></span>
+        <span class="language-nl">nl</span>
+        <span class="language-fr">fr</span>
       </label>
       <img
         src="../images/StappenNav2.png"
-        alt="page navigation"
-        class="PageNav"
+        alt="Stap 2 van 3"
+        class="step-nav"
       />
     </nav>
 
     <header>
-      <h1 id="obstakelTitel">Upload een foto van het obstakel<b>!</b></h1>
+      <h1 id="obstacle-title">Upload een foto van het obstakel<b>!</b></h1>
     </header>
 
-    <section class="fotoUpload">
-      <label for="inputFoto" class="fotoLabel">
-        <section class="fotoKader">
-          <img id="fotoPreview" src="" alt="preview" />
-          <span id="fotoLabelText">Foto<br />Uploaden</span>
+    <section class="photo-upload">
+      <label for="inputFoto" class="photo-label">
+        <section class="photo-frame">
+          <img id="photo-preview" src="" alt="preview" />
+          <span id="photo-label-text">Foto<br />Uploaden</span>
         </section>
         <input type="file" id="inputFoto" accept="image/*" />
       </label>
     </section>
-    <span class="breakLine" id="breaklineObstakel"></span>
-    <h1 id="obstakelTitel">Welk obstakel is het<b>?</b></h1>
-    <section class="obstakels">
-      <label class="obstakel">
-        <input type="checkbox" name="obstakel" value="bollard" />
-        <img src="../images/bollard.png" alt="bollard" />
+    <span class="divider" id="obstacle-divider"></span>
+    <h1 id="obstacle-title">Welk obstakel is het<b>?</b></h1>
+    <section class="obstacles">
+      <label class="obstacle">
+        <input type="checkbox" name="obstacle" value="bollard" />
+        <img src="../images/bollard.png" alt="Bollard" />
       </label>
-      <label class="obstakel">
-        <input type="checkbox" name="obstakel" value="signage" />
-        <img src="../images/signageinformationpanel.png" alt="signage" />
-      </label>
-      <label class="obstakel">
-        <input type="checkbox" name="obstakel" value="technicalcabinet" />
-        <img src="../images/technicalcabinet.png" alt="technicalcabinet" />
-      </label>
-      <label class="obstakel">
-        <input type="checkbox" name="obstakel" value="terrace" />
-        <img src="../images/terrace.png" alt="terrace" />
-      </label>
-      <label class="obstakel">
-        <input type="checkbox" name="obstakel" value="auto" />
-        <img src="../images/auto.png" alt="auto" />
-      </label>
-      <label class="obstakel">
-        <input type="checkbox" name="obstakel" value="moto" />
-        <img src="../images/moto.png" alt="moto" />
-      </label>
-      <label class="obstakel">
-        <input type="checkbox" name="obstakel" value="bikescooter" />
-        <img src="../images/bikescooter.png" alt="bikescooter" />
-      </label>
-      <label class="obstakel">
-        <input type="checkbox" name="obstakel" value="advertisingpanel" />
-        <img src="../images/advertisingpanel.png" alt="advertisingpanel" />
-      </label>
-      <label class="obstakel">
-        <input type="checkbox" name="obstakel" value="barrier" />
-        <img src="../images/barrier.png" alt="barrier" />
-      </label>
-      <label class="obstakel">
-        <input type="checkbox" name="obstakel" value="misplacedtrashbin" />
-        <img src="../images/misplacedtrashbin.png" alt="misplacedtrashbin" />
-      </label>
-      <label class="obstakel">
-        <input type="checkbox" name="obstakel" value="trashbag" />
-        <img src="../images/trashbag.png" alt="trashbag" />
-      </label>
-      <label class="obstakel">
-        <input type="checkbox" name="obstakel" value="chargingstation" />
+      <label class="obstacle">
+        <input type="checkbox" name="obstacle" value="signage" />
         <img
-          src="../images/chargingstationorcableforelectricvehicle.png"
-          alt="chargingstation"
+          src="../images/signageinformationpanel.png"
+          alt="Informatiepaneel"
         />
       </label>
-      <label class="obstakel">
-        <input type="checkbox" name="obstakel" value="streetlight" />
-        <img src="../images/streetlight.png" alt="streetlight" />
+      <label class="obstacle">
+        <input type="checkbox" name="obstacle" value="technical-cabinet" />
+        <img src="../images/technicalcabinet.png" alt="Technische kast" />
       </label>
-      <label class="obstakel">
-        <input type="checkbox" name="obstakel" value="misplaceddropzone" />
-        <img src="../images/misplaceddropzone.png" alt="misplaceddropzone" />
+      <label class="obstacle">
+        <input type="checkbox" name="obstacle" value="terrace" />
+        <img src="../images/terrace.png" alt="Terras" />
       </label>
-      <label class="obstakel">
-        <input type="checkbox" name="obstakel" value="andere" />
+      <label class="obstacle">
+        <input type="checkbox" name="obstacle" value="car" />
+        <img src="../images/auto.png" alt="Auto" />
+      </label>
+      <label class="obstacle">
+        <input type="checkbox" name="obstacle" value="motorcycle" />
+        <img src="../images/moto.png" alt="Motor" />
+      </label>
+      <label class="obstacle">
+        <input type="checkbox" name="obstacle" value="bike-scooter" />
+        <img src="../images/bikescooter.png" alt="Fiets of step" />
+      </label>
+      <label class="obstacle">
+        <input type="checkbox" name="obstacle" value="advertising-panel" />
+        <img src="../images/advertisingpanel.png" alt="Reclamepaneel" />
+      </label>
+      <label class="obstacle">
+        <input type="checkbox" name="obstacle" value="barrier" />
+        <img src="../images/barrier.png" alt="Barrier" />
+      </label>
+      <label class="obstacle">
+        <input type="checkbox" name="obstacle" value="misplaced-trash-bin" />
+        <img
+          src="../images/misplacedtrashbin.png"
+          alt="Verkeerd geplaatste vuilbak"
+        />
+      </label>
+      <label class="obstacle">
+        <input type="checkbox" name="obstacle" value="trash-bag" />
+        <img src="../images/trashbag.png" alt="Vuilzak" />
+      </label>
+      <label class="obstacle">
+        <input type="checkbox" name="obstacle" value="charging-station" />
+        <img
+          src="../images/chargingstationorcableforelectricvehicle.png"
+          alt="Laadpaal"
+        />
+      </label>
+      <label class="obstacle">
+        <input type="checkbox" name="obstacle" value="street-light" />
+        <img src="../images/streetlight.png" alt="Straatlamp" />
+      </label>
+      <label class="obstacle">
+        <input type="checkbox" name="obstacle" value="misplaced-drop-zone" />
+        <img src="../images/misplaceddropzone.png" alt="Verkeerde dropzone" />
+      </label>
+      <label class="obstacle">
+        <input type="checkbox" name="obstacle" value="other" />
         <span>Andere</span>
       </label>
     </section>
 
     <footer>
-      <a class="Vorige" href="../index.html">Vorige</a>
-      <a class="Volgende" href="gegevens.html">Volgende</a>
+      <a class="btn-prev" href="../index.html">Vorige</a>
+      <a class="btn-next" href="gegevens.html">Volgende</a>
     </footer>
     <script src="../javascript/Javascript.js"></script>
   </body>

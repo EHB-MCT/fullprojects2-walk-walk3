@@ -1,5 +1,5 @@
 @media (max-width: 48em) {
-  #kaartMobile {
+  #map-mobile {
     width: 75%;
     max-width: 950px;
     height: 150px;
@@ -8,50 +8,42 @@
     margin-top: 5%;
     touch-action: pan-x pan-y;
   }
-  #openMapLink {
-    display: block;
-    width: 75%;
-    max-width: 950px;
-    margin: 1rem auto 0;
-    text-align: center;
-    color: #ec5c37;
-    font-family: "EestiRegular", sans-serif;
-    font-weight: 700;
-    text-decoration: none;
-  }
-  #openMapLink:hover {
-    text-decoration: underline;
-  }
-  .locatieObject {
+
+  .location-form {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
   }
-  .breakLine {
+
+  .divider {
     margin-top: 7%;
     margin-bottom: 5%;
   }
+
   #inputStraat {
     width: 75%;
   }
+
   #inputGemeente {
     width: 50%;
     margin-top: 5%;
   }
+
   #inputPostcode {
     margin-top: 5%;
     width: 20%;
     margin-left: 5%;
   }
-  .locationButtons {
+
+  .location-buttons {
     width: 75%;
-    display: block;
-    margin-top: 5%;
     display: flex;
+    margin-top: 5%;
   }
-  .deelLocatieButton {
+
+  .share-location-button {
     margin: auto;
     font-family: "EestiRegular", sans-serif;
     font-weight: 600;
@@ -61,20 +53,23 @@
     background-color: #ffe375;
     color: #2b254c;
   }
-  .deelLocatieButton:active {
+
+  .share-location-button:active {
     color: #ffe375;
     background-color: #2b254c;
   }
-  .objectDesktop {
+
+  .desktop-only {
     display: none;
   }
-  .objectMobile {
+
+  .mobile-only {
     display: flex;
   }
 }
 
 @media (min-width: 48em) {
-  .locatieObject {
+  .location-form {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -82,51 +77,61 @@
     align-items: center;
     width: 50%;
   }
-  .locatieObject > section:nth-child(1) {
+
+  .location-form > section:nth-child(1) {
     width: 5%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  .locatieObject > section:nth-child(2) {
+
+  .location-form > section:nth-child(2) {
     width: 95%;
     height: 100%;
   }
-  .locatieObject > section:nth-child(2) > h1 {
+
+  .location-form > section:nth-child(2) > h1 {
     width: 95%;
     text-align: left;
     padding-left: 5%;
   }
-  .breakLine {
+
+  .divider {
     display: inline-block;
     margin-bottom: 0;
     height: 25vh;
     width: 3px;
     background-color: #ffe375;
   }
-  .objectMobile {
+
+  .mobile-only {
     display: none;
   }
-  .objectDesktop {
+
+  .desktop-only {
     display: flex;
   }
+
   #inputStraatDesktop {
     width: 70%;
     margin-left: 5%;
     margin-right: 25%;
   }
+
   #inputGemeenteDesktop {
     width: 40%;
     margin-top: 3%;
     margin-left: 5%;
   }
+
   #inputPostcodeDesktop {
     margin-top: 3%;
     width: 25%;
     margin-left: 5%;
   }
-  #kaartDesktop {
+
+  #map-desktop {
     width: 70%;
     max-width: 950px;
     height: 150px;
@@ -136,7 +141,8 @@
     margin-left: 5%;
     touch-action: pan-x pan-y;
   }
-  .deelLocatieButton {
+
+  .share-location-button {
     font-family: "EestiRegular", sans-serif;
     font-weight: 600;
     font-style: normal;

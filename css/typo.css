@@ -24,7 +24,7 @@
     width: 100%;
   }
 
-  #HomeExtraTitel {
+  #home-title {
     font-size: 65px;
     line-height: 50px;
     text-align: left;
@@ -34,6 +34,7 @@
     margin-bottom: 3%;
   }
 }
+
 @media (min-width: 48em) {
   h1 {
     font-family: "EestiUltraBold", sans-serif;
@@ -60,14 +61,15 @@
     width: 100%;
   }
 
-  #HomeExtraTitel {
+  #home-title {
     margin: auto;
     font-size: 90px;
     line-height: 75px;
     text-align: left;
     width: 100%;
   }
-  #headerIndex {
+
+  #home-header {
     width: 25%;
     margin-top: 5%;
     margin-bottom: 5%;

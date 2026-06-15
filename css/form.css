@@ -1,5 +1,5 @@
 @media (max-width: 48em) {
-  .breakLine {
+  .divider {
     width: 34%;
     height: 3px;
     border-radius: 1px;
@@ -45,11 +45,12 @@
     background-color: white;
   }
 
-  .PageNav {
+  .step-nav {
     width: 40%;
     margin-top: 5%;
   }
-  .Anoniem {
+
+  .anonymous-btn {
     font-family: "EestiRegular", sans-serif;
     font-weight: 700;
     font-style: normal;
@@ -62,7 +63,7 @@
 }
 
 @media (min-width: 48em) {
-  .breakLine {
+  .divider {
     width: 34%;
     height: 3px;
     border-radius: 1px;
@@ -108,11 +109,12 @@
     background-color: white;
   }
 
-  .PageNav {
+  .step-nav {
     width: 40%;
     margin-top: 5%;
   }
-  .Anoniem {
+
+  .anonymous-btn {
     font-family: "EestiRegular", sans-serif;
     font-weight: 700;
     font-style: normal;

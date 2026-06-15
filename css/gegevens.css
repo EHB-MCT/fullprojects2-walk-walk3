@@ -1,5 +1,5 @@
 @media (max-width: 48em) {
-  .locatieGegevens {
+  .user-details {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -13,12 +13,6 @@
   #inputMail {
     width: 75%;
     margin-top: 5%;
-  }
-
-  body {
-    background: #221b4f;
-    font-family: Arial, sans-serif;
-    color: white;
   }
 
   .checkbox-group {
@@ -57,6 +51,8 @@
     font-weight: 500;
     line-height: 1.4;
     margin: 0;
+    font-family: "EestiRegular", sans-serif;
+    color: white;
   }
 
   .custom-checkbox small {
@@ -72,7 +68,8 @@
     color: #ffd34d;
     text-decoration: underline;
   }
-  .spanGegevens {
+
+  .details-divider {
     width: 40%;
     margin-left: 30%;
     margin-top: 2%;
@@ -85,23 +82,25 @@
 }
 
 @media (min-width: 48em) {
-  .titel {
+  .page-title {
     font-size: 50px;
     margin-left: 0%;
   }
 
-  .locatieGegevens {
+  .user-details {
     margin-top: 1%;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 35vw;
   }
-  .locatieGegevens > input {
+
+  .user-details > input {
     width: 60%;
     margin-bottom: 5%;
   }
-  .checkboxText {
+
+  .checkbox-text {
     align-items: center;
     font-size: 20px;
     font-family: "EestiRegular", sans-serif;
@@ -112,12 +111,12 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-
     width: 26vw;
     margin-left: 37vw;
     margin-right: 37vw;
     margin-bottom: 0%;
   }
+
   .custom-checkbox {
     display: flex;
     align-items: flex-start;
@@ -149,6 +148,8 @@
     font-weight: 500;
     line-height: 1.4;
     margin: 0;
+    font-family: "EestiRegular", sans-serif;
+    color: white;
   }
 
   .custom-checkbox small {
@@ -164,7 +165,8 @@
     color: #ffd34d;
     text-decoration: underline;
   }
-  .spanGegevens {
+
+  .details-divider {
     width: 40%;
     margin-left: 30%;
     margin-top: 2%;
