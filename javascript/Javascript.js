@@ -4,6 +4,26 @@ var fr = document.querySelector(".language-fr");
 
 nl.classList.add("active");
 
+var pageMap = {
+  "index.html": "paginas/indexFR.html",
+  "indexFR.html": "../index.html",
+  "welkObstakel.html": "welkObstakelFR.html",
+  "welkObstakelFR.html": "welkObstakel.html",
+  "gegevens.html": "gegevensFR.html",
+  "gegevensFR.html": "gegevens.html",
+  "verzonden.html": "verzondenFR.html",
+  "verzondenFR.html": "verzonden.html",
+};
+
+var huidigePagina = window.location.pathname.split("/").pop();
+var isFrans = huidigePagina.endsWith("FR.html");
+
+if (isFrans) {
+  toggle.checked = true;
+  nl.classList.remove("active");
+  fr.classList.add("active");
+}
+
 toggle.addEventListener("change", function () {
   if (toggle.checked) {
     nl.classList.remove("active");
@@ -11,6 +31,12 @@ toggle.addEventListener("change", function () {
   } else {
     nl.classList.add("active");
     fr.classList.remove("active");
+  }
+
+  var huidigePagina = window.location.pathname.split("/").pop();
+  var doelPagina = pageMap[huidigePagina];
+  if (doelPagina) {
+    window.location.href = doelPagina;
   }
 });
 
