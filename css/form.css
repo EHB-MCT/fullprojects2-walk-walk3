@@ -49,6 +49,16 @@
     width: 40%;
     margin-top: 5%;
   }
+  .Anoniem {
+    font-family: "EestiRegular", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 18px;
+    color: white;
+    background-color: #ec5c37;
+    border: none;
+    padding: 1% 4%;
+  }
 }
 
 @media (min-width: 48em) {
@@ -101,5 +111,16 @@
   .PageNav {
     width: 40%;
     margin-top: 5%;
+  }
+  .Anoniem {
+    font-family: "EestiRegular", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 14px;
+    color: white;
+    background-color: #ec5c37;
+    border: none;
+    padding: 4% 4%;
+    text-decoration: none;
   }
 }

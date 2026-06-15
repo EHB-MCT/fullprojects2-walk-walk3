@@ -72,6 +72,16 @@
     color: #ffd34d;
     text-decoration: underline;
   }
+  .spanGegevens {
+    width: 40%;
+    margin-left: 30%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    align-self: center;
+    height: 3px;
+    background-color: #ec5c37;
+    display: inline-block;
+  }
 }
 
 @media (min-width: 48em) {
@@ -99,11 +109,14 @@
   }
 
   .checkbox-group {
-    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
     width: 26vw;
     margin-left: 37vw;
     margin-right: 37vw;
-    margin-bottom: 7%;
+    margin-bottom: 0%;
   }
   .custom-checkbox {
     display: flex;
@@ -150,5 +163,14 @@
   .custom-checkbox a {
     color: #ffd34d;
     text-decoration: underline;
+  }
+  .spanGegevens {
+    width: 40%;
+    margin-left: 30%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    align-self: center;
+    height: 3px;
+    background-color: #ec5c37;
   }
 }
