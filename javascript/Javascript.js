@@ -118,7 +118,7 @@ if (fotoInvoer) {
       var fotoFormulier = new FormData();
       fotoFormulier.append("files", bestand);
 
-      fetch("http://localhost:1337/api/upload", {
+      fetch("https://automatic-dogs-8279f757b9.strapiapp.com/api/upload", {
         method: "POST",
         body: fotoFormulier,
       })
@@ -256,7 +256,7 @@ function verstuurMelding(isAnoniem) {
     gegevens.data.foto = fotoId;
   }
 
-  fetch("http://localhost:1337/api/meldingen", {
+  fetch("https://automatic-dogs-8279f757b9.strapiapp.com/api/meldingen", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(gegevens),
