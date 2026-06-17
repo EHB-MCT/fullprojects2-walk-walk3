@@ -174,7 +174,7 @@ if (fotoInvoer) {
         fotoVoorbeeld.style.display = "block";
         fotoTekst.style.display = "none";
 
-        localStorage.setItem("a", resultaat.target.result);
+        localStorage.setItem("foto", resultaat.target.result);
       };
 
       lezer.readAsDataURL(bestand);
