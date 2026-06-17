@@ -52,11 +52,27 @@ var kaartMobiel = document.getElementById("map-mobile");
 var kaartDesktop = document.getElementById("map-desktop");
 
 function toonAdresOpKaart() {
-  var straat = document.getElementById("inputStraat").value;
-  var gemeente = document.getElementById("inputGemeente").value;
-  var postcode = document.getElementById("inputPostcode").value;
-  var volledigAdres = straat + " " + postcode + " " + gemeente + " Brussel";
+  var straatMobiel = document.getElementById("inputStraat");
+  var straatDesktop = document.getElementById("inputStraatDesktop");
+  var gemeenteMobiel = document.getElementById("inputGemeente");
+  var gemeenteDesktop = document.getElementById("inputGemeenteDesktop");
+  var postcodeMobiel = document.getElementById("inputPostcode");
+  var postcodeDesktop = document.getElementById("inputPostcodeDesktop");
 
+  var straat =
+    (straatMobiel && straatMobiel.value) ||
+    (straatDesktop && straatDesktop.value) ||
+    "";
+  var gemeente =
+    (gemeenteMobiel && gemeenteMobiel.value) ||
+    (gemeenteDesktop && gemeenteDesktop.value) ||
+    "";
+  var postcode =
+    (postcodeMobiel && postcodeMobiel.value) ||
+    (postcodeDesktop && postcodeDesktop.value) ||
+    "";
+
+  var volledigAdres = straat + " " + postcode + " " + gemeente + " Brussel";
   var kaartUrl =
     "https://maps.google.com/maps?q=" +
     encodeURIComponent(volledigAdres) +
@@ -64,9 +80,12 @@ function toonAdresOpKaart() {
 
   if (kaartMobiel) kaartMobiel.src = kaartUrl;
   if (kaartDesktop) kaartDesktop.src = kaartUrl;
+
+  localStorage.setItem("straat", straat);
+  localStorage.setItem("gemeente", gemeente);
+  localStorage.setItem("postcode", postcode);
 }
 
-// Telkens je iets typt in een locatie-invoerveld, wordt de kaart bijgewerkt
 var locatieInvoervelden = document.querySelectorAll(".location-form input");
 if (locatieInvoervelden.length > 0) {
   locatieInvoervelden.forEach(function (veld) {
@@ -74,7 +93,7 @@ if (locatieInvoervelden.length > 0) {
   });
 }
 
-/* ===== FOTO UPLOADEN EN VOORBEELD TONEN ===== */
+/* ===== FOTO UPLOADEN NAAR STRAPI ===== */
 
 var fotoInvoer = document.getElementById("inputFoto");
 
@@ -83,18 +102,36 @@ if (fotoInvoer) {
   var fotoTekst = document.getElementById("photo-label-text");
 
   fotoInvoer.addEventListener("change", function () {
-    var gekozenBestand = this.files[0];
+    var bestand = this.files[0];
 
-    if (gekozenBestand) {
+    if (bestand) {
+      // Voorbeeld tonen aan de gebruiker
       var lezer = new FileReader();
-
       lezer.onload = function (resultaat) {
         fotoVoorbeeld.src = resultaat.target.result;
         fotoVoorbeeld.style.display = "block";
         fotoTekst.style.display = "none";
       };
+      lezer.readAsDataURL(bestand);
 
-      lezer.readAsDataURL(gekozenBestand);
+      // Foto meteen uploaden naar Strapi
+      var fotoFormulier = new FormData();
+      fotoFormulier.append("files", bestand);
+
+      fetch("http://localhost:1337/api/upload", {
+        method: "POST",
+        body: fotoFormulier,
+      })
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (uploadResultaat) {
+          var fotoId = uploadResultaat[0].id;
+          localStorage.setItem("fotoId", fotoId);
+        })
+        .catch(function (fout) {
+          console.error("Foto uploaden mislukt:", fout);
+        });
     }
   });
 }
@@ -126,12 +163,10 @@ deelLocatieKnoppen.forEach(function (knop) {
           var gemeente = adres.city || adres.town || adres.municipality || "";
           var postcode = adres.postcode || "";
 
-          // Mobile invoervelden invullen
           document.getElementById("inputStraat").value = straat;
           document.getElementById("inputGemeente").value = gemeente;
           document.getElementById("inputPostcode").value = postcode;
 
-          // Desktop invoervelden ook invullen, als ze bestaan
           var straatDesktop = document.getElementById("inputStraatDesktop");
           if (straatDesktop) {
             straatDesktop.value = straat;
@@ -145,16 +180,106 @@ deelLocatieKnoppen.forEach(function (knop) {
   });
 });
 
+/* ===== OBSTAKELS ONTHOUDEN ===== */
+
+var obstakelCheckboxes = document.querySelectorAll("input[name='obstacle']");
+
+obstakelCheckboxes.forEach(function (checkbox) {
+  checkbox.addEventListener("change", function () {
+    var geselecteerdeObstakels = [];
+
+    document
+      .querySelectorAll("input[name='obstacle']:checked")
+      .forEach(function (aangevinkt) {
+        geselecteerdeObstakels.push(aangevinkt.value);
+      });
+
+    localStorage.setItem("obstakels", JSON.stringify(geselecteerdeObstakels));
+  });
+});
+
 /* ===== ANONIEM BLIJVEN ===== */
 
 var anoniemKnop = document.getElementById("anonymButton");
 
-if (anoniemKnop) {
-  anoniemKnop.addEventListener("click", function () {
-    if (huidigeBestandsnaam() === "gegevensFR.html") {
-      window.location.href = "verzondenFR.html";
-    } else {
-      window.location.href = "verzonden.html";
-    }
+/* ===== MELDING VERSTUREN NAAR DATABASE ===== */
+
+var verzendKnop = document.getElementById("submit-button");
+
+if (verzendKnop) {
+  verzendKnop.addEventListener("click", function (event) {
+    event.preventDefault();
+    verstuurMelding(false);
   });
+}
+
+if (anoniemKnop) {
+  anoniemKnop.addEventListener("click", function (event) {
+    event.preventDefault();
+    verstuurMelding(true);
+  });
+}
+
+function verstuurMelding(isAnoniem) {
+  var straat = localStorage.getItem("straat") || "";
+  var gemeente = localStorage.getItem("gemeente") || "";
+  var postcode = localStorage.getItem("postcode") || "";
+
+  if (straat === "" || gemeente === "" || postcode === "") {
+    alert(
+      "Gelieve eerst een locatie in te vullen voordat je een melding verstuurt.",
+    );
+    return;
+  }
+
+  var magOpslaan = document.getElementById("inputDatabase").checked;
+  var krijgtNieuwsbrief = document.getElementById("inputNieuwsbrief").checked;
+  var fotoId = localStorage.getItem("fotoId");
+
+  var gegevens = {
+    data: {
+      straat: straat,
+      gemeente: gemeente,
+      postcode: postcode,
+      obstakels: JSON.parse(localStorage.getItem("obstakels") || "[]"),
+      nieuwsbrief: krijgtNieuwsbrief,
+    },
+  };
+
+  if (!isAnoniem && magOpslaan) {
+    gegevens.data.naam = document.getElementById("inputNaam").value;
+    gegevens.data.voornaam = document.getElementById("inputVoornaam").value;
+    gegevens.data.email = document.getElementById("inputMail").value;
+  }
+
+  if (fotoId) {
+    gegevens.data.foto = fotoId;
+  }
+
+  fetch("http://localhost:1337/api/meldingen", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(gegevens),
+  })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (resultaat) {
+      console.log("Melding opgeslagen:", JSON.stringify(resultaat, null, 2));
+
+      localStorage.removeItem("straat");
+      localStorage.removeItem("gemeente");
+      localStorage.removeItem("postcode");
+      localStorage.removeItem("obstakels");
+      localStorage.removeItem("fotoId");
+
+      if (huidigeBestandsnaam() === "gegevensFR.html") {
+        window.location.href = "verzondenFR.html";
+      } else {
+        window.location.href = "verzonden.html";
+      }
+    })
+    .catch(function (fout) {
+      console.error("Er ging iets mis bij het opslaan:", fout);
+    });
 }
