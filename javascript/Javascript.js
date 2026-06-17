@@ -1,10 +1,11 @@
-var toggle = document.getElementById("languageToggle");
-var nl = document.querySelector(".language-nl");
-var fr = document.querySelector(".language-fr");
+/* ===== TAAL WISSELEN (NL/FR) ===== */
 
-nl.classList.add("active");
+var taalKnop = document.getElementById("languageToggle");
+var nlTekst = document.querySelector(".language-nl");
+var frTekst = document.querySelector(".language-fr");
 
-var pageMap = {
+// Lijst die zegt: "als ik op deze pagina sta, ga dan naar deze andere pagina"
+var anderePaginaInAndereTaal = {
   "index.html": "paginas/indexFR.html",
   "indexFR.html": "../index.html",
   "welkObstakel.html": "welkObstakelFR.html",
@@ -15,116 +16,145 @@ var pageMap = {
   "verzondenFR.html": "verzonden.html",
 };
 
-var huidigePagina = window.location.pathname.split("/").pop();
-var isFrans = huidigePagina.endsWith("FR.html");
-
-if (isFrans) {
-  toggle.checked = true;
-  nl.classList.remove("active");
-  fr.classList.add("active");
+// Naam van het huidige bestand ophalen (bv. "gegevens.html")
+function huidigeBestandsnaam() {
+  return window.location.pathname.split("/").pop();
 }
 
-toggle.addEventListener("change", function () {
-  if (toggle.checked) {
-    nl.classList.remove("active");
-    fr.classList.add("active");
+// Bij het laden van de pagina: check of we al op een Franse pagina staan
+var ditIsEenFransePagina = huidigeBestandsnaam().endsWith("FR.html");
+
+if (ditIsEenFransePagina) {
+  taalKnop.checked = true;
+  nlTekst.classList.remove("active");
+  frTekst.classList.add("active");
+}
+
+// Als er op de taalknop geklikt wordt
+taalKnop.addEventListener("change", function () {
+  if (taalKnop.checked) {
+    nlTekst.classList.remove("active");
+    frTekst.classList.add("active");
   } else {
-    nl.classList.add("active");
-    fr.classList.remove("active");
+    nlTekst.classList.add("active");
+    frTekst.classList.remove("active");
   }
 
-  var huidigePagina = window.location.pathname.split("/").pop();
-  var doelPagina = pageMap[huidigePagina];
+  var doelPagina = anderePaginaInAndereTaal[huidigeBestandsnaam()];
   if (doelPagina) {
     window.location.href = doelPagina;
   }
 });
 
-var mapMobile = document.getElementById("map-mobile");
-var mapDesktop = document.getElementById("map-desktop");
+/* ===== KAART BIJWERKEN MET ADRES ===== */
 
-function updateMap() {
+var kaartMobiel = document.getElementById("map-mobile");
+var kaartDesktop = document.getElementById("map-desktop");
+
+function toonAdresOpKaart() {
   var straat = document.getElementById("inputStraat").value;
   var gemeente = document.getElementById("inputGemeente").value;
   var postcode = document.getElementById("inputPostcode").value;
-  var adres = straat + " " + postcode + " " + gemeente + " Brussel";
-  var embedUrl =
+  var volledigAdres = straat + " " + postcode + " " + gemeente + " Brussel";
+
+  var kaartUrl =
     "https://maps.google.com/maps?q=" +
-    encodeURIComponent(adres) +
+    encodeURIComponent(volledigAdres) +
     "&output=embed";
 
-  if (mapMobile) mapMobile.src = embedUrl;
-  if (mapDesktop) mapDesktop.src = embedUrl;
+  if (kaartMobiel) kaartMobiel.src = kaartUrl;
+  if (kaartDesktop) kaartDesktop.src = kaartUrl;
 }
 
-var inputs = document.querySelectorAll(".location-form input");
-if (inputs.length > 0) {
-  inputs.forEach(function (input) {
-    input.addEventListener("input", updateMap);
+// Telkens je iets typt in een locatie-invoerveld, wordt de kaart bijgewerkt
+var locatieInvoervelden = document.querySelectorAll(".location-form input");
+if (locatieInvoervelden.length > 0) {
+  locatieInvoervelden.forEach(function (veld) {
+    veld.addEventListener("input", toonAdresOpKaart);
   });
 }
 
-var inputFoto = document.getElementById("inputFoto");
-if (inputFoto) {
-  var photoPreview = document.getElementById("photo-preview");
-  var photoLabelText = document.getElementById("photo-label-text");
-  inputFoto.addEventListener("change", function () {
-    var file = this.files[0];
-    if (file) {
-      var reader = new FileReader();
-      reader.onload = function (e) {
-        photoPreview.src = e.target.result;
-        photoPreview.style.display = "block";
-        photoLabelText.style.display = "none";
+/* ===== FOTO UPLOADEN EN VOORBEELD TONEN ===== */
+
+var fotoInvoer = document.getElementById("inputFoto");
+
+if (fotoInvoer) {
+  var fotoVoorbeeld = document.getElementById("photo-preview");
+  var fotoTekst = document.getElementById("photo-label-text");
+
+  fotoInvoer.addEventListener("change", function () {
+    var gekozenBestand = this.files[0];
+
+    if (gekozenBestand) {
+      var lezer = new FileReader();
+
+      lezer.onload = function (resultaat) {
+        fotoVoorbeeld.src = resultaat.target.result;
+        fotoVoorbeeld.style.display = "block";
+        fotoTekst.style.display = "none";
       };
-      reader.readAsDataURL(file);
+
+      lezer.readAsDataURL(gekozenBestand);
     }
   });
 }
 
-document.querySelectorAll(".share-location-button").forEach(function (button) {
-  button.addEventListener("click", function () {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      var lat = position.coords.latitude;
-      var lon = position.coords.longitude;
-      fetch(
+/* ===== LOCATIE OPHALEN VIA GPS ===== */
+
+var deelLocatieKnoppen = document.querySelectorAll(".share-location-button");
+
+deelLocatieKnoppen.forEach(function (knop) {
+  knop.addEventListener("click", function () {
+    navigator.geolocation.getCurrentPosition(function (positie) {
+      var breedtegraad = positie.coords.latitude;
+      var lengtegraad = positie.coords.longitude;
+
+      var apiUrl =
         "https://nominatim.openstreetmap.org/reverse?lat=" +
-          lat +
-          "&lon=" +
-          lon +
-          "&format=json",
-      )
+        breedtegraad +
+        "&lon=" +
+        lengtegraad +
+        "&format=json";
+
+      fetch(apiUrl)
         .then(function (response) {
           return response.json();
         })
         .then(function (data) {
-          var address = data.address;
-          var street =
-            (address.road || "") + " " + (address.house_number || "");
-          var municipality =
-            address.city || address.town || address.municipality || "";
-          var postcode = address.postcode || "";
+          var adres = data.address;
+          var straat = (adres.road || "") + " " + (adres.house_number || "");
+          var gemeente = adres.city || adres.town || adres.municipality || "";
+          var postcode = adres.postcode || "";
 
-          document.getElementById("inputStraat").value = street;
-          document.getElementById("inputGemeente").value = municipality;
+          // Mobile invoervelden invullen
+          document.getElementById("inputStraat").value = straat;
+          document.getElementById("inputGemeente").value = gemeente;
           document.getElementById("inputPostcode").value = postcode;
 
-          if (document.getElementById("inputStraatDesktop")) {
-            document.getElementById("inputStraatDesktop").value = street;
-            document.getElementById("inputGemeenteDesktop").value =
-              municipality;
+          // Desktop invoervelden ook invullen, als ze bestaan
+          var straatDesktop = document.getElementById("inputStraatDesktop");
+          if (straatDesktop) {
+            straatDesktop.value = straat;
+            document.getElementById("inputGemeenteDesktop").value = gemeente;
             document.getElementById("inputPostcodeDesktop").value = postcode;
           }
 
-          var fullAddress =
-            street + " " + postcode + " " + municipality + " Brussel";
-          var embedUrl =
-            "https://maps.google.com/maps?q=" +
-            encodeURIComponent(fullAddress) +
-            "&output=embed";
-          if (mapMobile) mapMobile.src = embedUrl;
-          if (mapDesktop) mapDesktop.src = embedUrl;
+          toonAdresOpKaart();
         });
     });
   });
 });
+
+/* ===== ANONIEM BLIJVEN ===== */
+
+var anoniemKnop = document.getElementById("anonymButton");
+
+if (anoniemKnop) {
+  anoniemKnop.addEventListener("click", function () {
+    if (huidigeBestandsnaam() === "gegevensFR.html") {
+      window.location.href = "verzondenFR.html";
+    } else {
+      window.location.href = "verzonden.html";
+    }
+  });
+}

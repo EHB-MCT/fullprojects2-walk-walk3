@@ -18,13 +18,16 @@
   .checkbox-group {
     max-width: 700px;
     padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
   }
 
   .custom-checkbox {
     display: flex;
     align-items: flex-start;
     gap: 12px;
-    margin: 5% 10% 24px;
+    margin: 3% 10%;
     cursor: pointer;
   }
 
@@ -78,6 +81,23 @@
     height: 3px;
     background-color: #ec5c37;
     display: inline-block;
+  }
+
+  .Anoniem-Button {
+    margin: auto;
+    font-family: "EestiRegular", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    padding: 3% 3%;
+    font-size: 16px;
+    background-color: #ffe375;
+    color: #2b254c;
+    margin-top: 6%;
+  }
+
+  .Anoniem-Button:active {
+    color: #ffe375;
+    background-color: #2b254c;
   }
 }
 
@@ -169,10 +189,27 @@
   .details-divider {
     width: 40%;
     margin-left: 30%;
+    margin-right: 30%;
     margin-top: 2%;
     margin-bottom: 2%;
     align-self: center;
     height: 3px;
     background-color: #ec5c37;
+  }
+  .Anoniem-Button {
+    margin: auto;
+    font-family: "EestiRegular", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    padding: 3% 3%;
+    font-size: 16px;
+    background-color: #ffe375;
+    color: #2b254c;
+    margin-top: 6%;
+  }
+
+  .Anoniem-Button:active {
+    color: #ffe375;
+    background-color: #2b254c;
   }
 }
