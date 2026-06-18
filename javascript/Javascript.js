@@ -49,7 +49,7 @@ var kaartMobiel = document.getElementById("map-mobile");
 var kaartDesktop = document.getElementById("map-desktop");
 
 function toonAdresOpKaart() {
-  var isDesktop = document.getElementById("inputStraatDesktop") !== null;
+  var isDesktop = window.innerWidth >= 768;
 
   var straat;
   var gemeente;
@@ -136,10 +136,7 @@ for (var i = 0; i < deelLocatieKnoppen.length; i++) {
             postcode = data.address.postcode;
           }
 
-          var isDesktop =
-            document.getElementById("inputStraatDesktop") !== null;
-
-          if (isDesktop) {
+          if (window.innerWidth >= 768) {
             document.getElementById("inputStraatDesktop").value = straat;
             document.getElementById("inputGemeenteDesktop").value = gemeente;
             document.getElementById("inputPostcodeDesktop").value = postcode;
