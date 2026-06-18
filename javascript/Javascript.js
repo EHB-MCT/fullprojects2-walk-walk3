@@ -241,6 +241,7 @@ if (verzendKnop) {
     localStorage.setItem("nieuwsbrief", krijgtNieuwsbrief);
 
     toonAlleOpgeslagenInfo();
+    stuurMailNaarGemeente();
 
     var bestandsnaam = window.location.pathname.split("/").pop();
 
@@ -265,4 +266,56 @@ function toonAlleOpgeslagenInfo() {
   console.log("Email:", localStorage.getItem("email"));
   console.log("Mag opslaan:", localStorage.getItem("magOpslaan"));
   console.log("Nieuwsbrief:", localStorage.getItem("nieuwsbrief"));
+}
+
+/* MAIL VERSTUREN NAAR DE GEMEENTE */
+
+function stuurMailNaarGemeente() {
+  var straat = localStorage.getItem("straat");
+  var gemeente = localStorage.getItem("gemeente");
+  var postcode = localStorage.getItem("postcode");
+  var obstakels = localStorage.getItem("obstakels");
+  var naam = localStorage.getItem("naam");
+  var voornaam = localStorage.getItem("voornaam");
+  var email = localStorage.getItem("email");
+  var foto = localStorage.getItem("foto");
+
+  var gemeenteEmails = {
+    1000: "cabinet.a.maes@brucity.be",
+    1030: "cabinet.harze@1030.be",
+    1040: "andre.dubus@etterbeek.brussels",
+    1050: "valerie.libert@elsene.brussels",
+    1060: "cmorenville@stgilles.brussels",
+    1070: "hbenmrah@anderlecht.brussels",
+    1080: "sraiss@molenbeek.irisnet.be",
+    1081: "dlagast@koekelberg.brussels",
+    1082: "schibani@berchem.brussels",
+    1083: "qpaelinck@ganshoren.brussels",
+    1090: "jgesquiere@jette.brussels",
+    1140: "dcordonnier@evere.brussels",
+    1150: "gdallemagne@woluwe1150.be",
+    1160: "mmaelschalck@oudergem.brussels",
+    1170: "mstassart@wb1170.brussels",
+    1180: "jbiermann@ukkel.brussels",
+    1190: "fflamme@vorst.brussels",
+    1200: "g.matgen@woluwe1200.be",
+    1210: "mjabour@sjtn.brussels",
+  };
+
+  var emailGemeente = gemeenteEmails[postcode];
+  emailGemeente = "lars.chokier@gmail.com";
+
+  var mailGegevens = {
+    naar_email: emailGemeente,
+    straat: straat,
+    gemeente: gemeente,
+    postcode: postcode,
+    obstakels: obstakels,
+    naam: naam,
+    voornaam: voornaam,
+    email: email,
+    foto: foto,
+  };
+
+  emailjs.send("service_ofcrsb2", "template_i36xuke", mailGegevens);
 }

@@ -7,6 +7,17 @@
       name="description"
       content="Vul uw gegevens in om de melding te versturen naar Walk Brussels."
     />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "02hCeCI5HRKRk9MKJ",
+        });
+      })();
+    </script>
     <link rel="icon" type="image/png" href="../images/Favicon.png" />
     <link rel="stylesheet" href="https://use.typekit.net/gpf2sus.css" />
     <link rel="stylesheet" href="../css/style.css" />
