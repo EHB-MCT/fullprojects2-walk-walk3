@@ -167,11 +167,35 @@ if (fotoInvoer) {
       var lezer = new FileReader();
 
       lezer.onload = function (resultaat) {
-        fotoVoorbeeld.src = resultaat.target.result;
-        fotoVoorbeeld.style.display = "block";
-        fotoTekst.style.display = "none";
+        var afbeelding = new Image();
 
-        localStorage.setItem("foto", resultaat.target.result);
+        afbeelding.onload = function () {
+          var canvas = document.createElement("canvas");
+          var maxBreedte = 600;
+          var schaal = maxBreedte / afbeelding.width;
+
+          canvas.width = maxBreedte;
+          canvas.height = afbeelding.height * schaal;
+
+          var canvasContext = canvas.getContext("2d");
+          canvasContext.drawImage(
+            afbeelding,
+            0,
+            0,
+            canvas.width,
+            canvas.height,
+          );
+
+          var verkleindeFoto = canvas.toDataURL("image/jpeg", 0.6);
+
+          fotoVoorbeeld.src = verkleindeFoto;
+          fotoVoorbeeld.style.display = "block";
+          fotoTekst.style.display = "none";
+
+          localStorage.setItem("foto", verkleindeFoto);
+        };
+
+        afbeelding.src = resultaat.target.result;
       };
 
       lezer.readAsDataURL(bestand);
@@ -209,6 +233,7 @@ if (anoniemKnop) {
   anoniemKnop.addEventListener("click", function (event) {
     event.preventDefault();
     toonAlleOpgeslagenInfo();
+    stuurMailNaarGemeente();
 
     var bestandsnaam = window.location.pathname.split("/").pop();
 
