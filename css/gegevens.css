@@ -141,7 +141,7 @@
     display: flex;
     align-items: flex-start;
     gap: 12px;
-    margin: 5% 10% 24px;
+    margin: 2% 10%;
     cursor: pointer;
   }
 
@@ -174,7 +174,7 @@
 
   .custom-checkbox small {
     display: block;
-    margin-top: 3%;
+    margin-top: 1%;
     font-size: 12px;
     color: #ffd34d;
     line-height: 1.4;
@@ -187,11 +187,11 @@
   }
 
   .details-divider {
-    width: 40%;
-    margin-left: 30%;
-    margin-right: 30%;
-    margin-top: 2%;
-    margin-bottom: 2%;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 7%;
+    margin-bottom: 7%;
     align-self: center;
     height: 3px;
     background-color: #ec5c37;
@@ -201,11 +201,11 @@
     font-family: "EestiRegular", sans-serif;
     font-weight: 600;
     font-style: normal;
-    padding: 3% 3%;
+    padding: 4% 5%;
     font-size: 16px;
     background-color: #ffe375;
     color: #2b254c;
-    margin-top: 6%;
+    margin-top: 5%;
   }
 
   .Anoniem-Button:active {
